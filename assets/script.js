@@ -129,15 +129,10 @@ fetch('cities.json')
 
     const arr = Object.values(obj);
   
-    console.log(arr);
-
-    let city = arr[0][0];
-    // console.log('city1'+city);
-    
+    let city = arr[0][0];    
     const CityCodes = [];
     for (let i = 0; i < arr[0].length; i++) {
       CityCodes.push(arr[0][i].CityCode);
-      // console.log(arr[0][i].CityCode);
     }
     
     return CityCodes;
@@ -148,26 +143,24 @@ fetch('cities.json')
       id=CityCodes[i]+",";
       console.log(id);
       let URL = `http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=71bca8bb316a592a049da20874f36394`; 
-       console.log(URL);
       fetch(URL)
-      .then((resp) =>{
-        if(!resp.ok) throw new Error(resp.statusText);
-      })
-      .then((data)=>{
-        //console.log(URL);
+      .then(response => response.json())
+      .then(data => {
         console.log(data);
+       
 
-        // shoWWeather(data);
+
       })
-      .catch(console.err);
+      .catch(error => {
+        console.error(error);
+      });
 
-      }
+    //  function shoWWeather(resp){
+    //   console.log(resp);
+    //  }
       
-      
 
-   //apicall= 
-
-  })
+  }})
   .catch(error => console.error(error));
 
 // function useCityData() {
