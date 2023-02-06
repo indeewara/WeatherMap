@@ -1,126 +1,4 @@
-// (function ($) {
-//   'use strict';
 
-//   // data background
-//   $('[data-background]').each(function () {
-//     $(this).css({
-//       'background-image': 'url(' + $(this).data('background') + ')'
-//     });
-//   });
-
-//   // collapse
-//   $('.collapse').on('shown.bs.collapse', function () {
-//     $(this).parent().find('.ti-plus').removeClass('ti-plus').addClass('ti-minus');
-//   }).on('hidden.bs.collapse', function () {
-//     $(this).parent().find('.ti-minus').removeClass('ti-minus').addClass('ti-plus');
-//   });
-
-//   // match height
-//   $('.match-height').matchHeight({
-//     byRow: true,
-//     property: 'height',
-//     target: null,
-//     remove: false
-//   });
-  
-// })(jQuery);
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     console.log(data[0].CityCode);    
-//   });
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     console.log(data[0].CityCode);
-//   })
-//   .catch(error => console.error(error));
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   })
-
-
-// let cityData;
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     cityData = data;
-//   })
-//   .catch(error => console.error(error));
-
-// console.log(cityData);
-
-
-
-//   const cityCodes = [];
-//   for (let i = 0; i < data.length; i++) {
-//     cityCodes.push(data[i].CityCode);
-//   }
-//   console.log(cityCodes);
-
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     const cityCodes = [];
-//     for (let i = 0; i < data.length; i++) {
-//       cityCodes.push(data[i].CityCode);
-//     }
-//     console.log(cityCodes);
-//   });
-
-// function fetchWeather(ev){
-
-//   let key
-// }
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     cityData = data;
-//     useCityData();
-//   })
-//   .catch(error => console.error(error));
-
-
-
-// const fs = require('fs');
-
-// fs.readFile('cities.json', 'utf8', (err, data) => {
-//   if (err) throw err;
-
-//   const obj = JSON.parse(data);
-//   const arr = Object.values(obj);
-  
-//   console.log(arr);
-// });
-
-
-// fetch('cities.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     const obj = data;
-//     const arr = Object.values(obj);
-  
-//     console.log(arr);
-//   const CityCodes = [];
-// for (let i = 0; i < arr.length; i++) {
-//   CityCodes.push(arr[i].CityCode);
-// }
-
-// console.log(CityCodes);
-//   })
-//   .catch(error => console.error(error));
 
 fetch('cities.json')
   .then(response => response.json())
@@ -138,34 +16,128 @@ fetch('cities.json')
     return CityCodes;
   })
   .then(CityCodes => {
-    console.log(CityCodes);
     for (let i = 0; i < CityCodes.length; i++) {
       id=CityCodes[i]+",";
-      console.log(id);
       let URL = `http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=71bca8bb316a592a049da20874f36394`; 
       fetch(URL)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-       
+      var array = [];
+      CityName = JSON.stringify(data.list[0].name);
+       //console.log(data.list[0].name);
+           let timezoneOffset = data.list[0].sys.timezone; 
+           let date = new Date();
+           date.setTime(date.getTime() + timezoneOffset * 1000);
+  
+        var weatherData = {
+          cityName: data.list[0].name,
+          temp: Math.round(parseInt(data.list[0].main.temp)),
+          maxTemp: Math.round(parseInt(data.list[0].main.temp_max)),
+          minTemp: Math.round(parseInt(data.list[0].main.temp_min)),
+          pressure: parseInt(data.list[0].main.pressure),
+          humidity: parseInt(data.list[0].main.humidity),
+          visibility: parseInt(data.list[0].visibility) / 1000,
+          windSpeed: parseFloat(data.list[0].wind.speed),
+          windDegree: parseInt(data.list[0].wind.deg),
+          sunrise: timecal(new Date((data.list[0].sys.sunrise) * 1000)),
+          sunset: timecal(new Date((data.list[0].sys.sunset) * 1000)),
+          currentTime: timecal(date),
+          currentDate: datecal(date),
+          weatherDes: data.list[0].weather[0].description,
+          weatherIcon: data.list[0].weather[0].icon
+        };
+      
+        var weatherArray = [];
+        weatherArray.push(weatherData);
 
+        showweather(weatherArray);
+
+        console.log(weatherArray[0].cityName);
+
+
+
+
+
+
+
+
+
+
+      
+
+    //   Temp = Math.round(parseInt(data.list[0].main.temp));
+    //   MaxTemp = Math.round(parseInt(data.list[0].main.temp_max));
+    //   MinTemp = Math.round(parseInt(data.list[0].main.temp_min));
+    //   Pressure =  parseInt(data.list[0].main.pressure);
+    //   Humidity =  parseInt(data.list[0].main.humidity);
+    //   Visibility =  parseInt(data.list[0].visibility)/1000;
+    //   WindSpeed = parseFloat(data.list[0].wind.speed);
+    //   WindDegree = parseInt(data.list[0].wind.deg);
+    //       let date1 = new Date((data.list[0].sys.sunrise )* 1000);
+    //   Sunrise=timecal(date1);
+    //       let date2 = new Date((data.list[0].sys.sunset )* 1000);
+    //   Sunset=timecal(date2);
+    //       let timezoneOffset = data.list[0].sys.timezone;  
+    //       let date = new Date();
+    //   date.setTime(date.getTime() + timezoneOffset * 1000);
+    //   currentTime = timecal(date);
+    //   currentDate = datecal(date);
+    //   WeatherDes  = JSON.stringify(data.list[0].weather[0].description);
+    //   WeatherIcon  = data.list[0].weather[0].icon;
+
+    // // let icon=`http://openweathermap.org/img/wn/${WeatherIcon}.png`;
+   
+    // let weatherData = [
+    //   CityName,
+    //   Temp,
+    //   MaxTemp,
+    //   MinTemp,
+    //   Pressure,
+    //   Humidity,
+    //   Visibility,
+    //   WindSpeed,
+    //   WindDegree,
+    //   Sunrise,
+    //   Sunset,
+    //   currentTime,
+    //   currentDate,
+    //   WeatherDes,
+    //   WeatherIcon
+    // ];
+
+    // console.log(weatherData);
+    
 
       })
       .catch(error => {
         console.error(error);
       });
 
-    //  function shoWWeather(resp){
-    //   console.log(resp);
-    //  }
-      
-
   }})
   .catch(error => console.error(error));
 
-// function useCityData() {
-//   console.log(cityData[0].CityCode);
-// }
+function timecal(date){
+  let hours = date.getHours();
+      let minutes = date.getMinutes();
+      minutes = minutes < 10 ? '0' + minutes : minutes; 
+      let ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; 
 
+      let time = hours + ':' + minutes + ' ' + ampm.toLowerCase();
+
+      return time;
+
+}
+
+function datecal(date){
+  let options = {
+    month: 'long',
+    day: 'numeric'
+  };
+  
+  return date.toLocaleDateString('en-US', options);  
+
+}
 
 

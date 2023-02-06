@@ -50,6 +50,130 @@
 	<!-- topics -->
 
 <section>
+
+<script>
+   function showweather(weatherArray){
+	for (let i = 0; i < weatherArray.length; i++) {
+  const weatherData = weatherArray[i];
+  const weatherDiv = document.createElement("div");
+  weatherDiv.style.border = "1px solid black";
+  weatherDiv.style.padding = "10px";
+  weatherDiv.innerHTML = `
+    <div>City Name: ${weatherData.cityName}</div>
+    <div>Temperature: ${weatherData.temp}</div>
+    <div>Maximum Temperature: ${weatherData.maxTemp}</div>
+    <div>Minimum Temperature: ${weatherData.minTemp}</div>
+    <div>Pressure: ${weatherData.pressure}</div>
+    <div>Humidity: ${weatherData.humidity}</div>
+    <div>Visibility: ${weatherData.visibility}</div>
+    <div>Wind Speed: ${weatherData.windSpeed}</div>
+    <div>Wind Degree: ${weatherData.windDegree}</div>
+    <div>Sunrise: ${weatherData.sunrise}</div>
+    <div>Sunset: ${weatherData.sunset}</div>
+    <div>Current Time: ${weatherData.currentTime}</div>
+    <div>Current Date: ${weatherData.currentDate}</div>
+    <div>Weather Description: ${weatherData.weatherDes}</div>
+    <div>Weather Icon: ${weatherData.weatherIcon}</div>
+  `;
+  document.body.appendChild(weatherDiv);
+}
+	}
+
+
+</script>
+
+<script> function showweather(weatherArray){
+	for (let i = 0; i < weatherArray.length; i++) {
+  const weatherData = weatherArray[i]; </script>
+
+
+<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
+	<div >
+		<div style="display: flex; flex-direction: column; ">
+			<div style="display: flex;">
+				<div style="background-image: url('assets/images/Top_right_div.jpg'); width: 299px; height: 217px; float: right;">
+					<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
+					<script> weatherData.cityName;  </script></div>
+					<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
+						9.19 am, February 8</div>
+				</div>
+				<div style="background-image: url('assets/images/Top_left_div.jpg'); width: 280px; height: 217px; float: left;">
+					<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
+						27°c</div>
+						<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
+							Temp Min : 25°c<br>
+							Temp Max : 28°c<br>
+						
+						</div>
+				
+				</div>
+			</div>
+			<div style="display: flex;">
+				<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
+			<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
+				 Pressure: 1018hPa   <br><br>
+				Humidity: 78%  <br><br>
+				Visibility: 8.0Km <br><br>
+				</div>
+				</div>
+				<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
+					<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
+					40m/s 120 Degree
+					</div>
+				
+				</div>
+				<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
+					<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
+						Sunrise: 6.05am   <br><br>
+						Sunset:  6.05pm  <br><br>
+					   </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</a>
+
+
+
+<script> } }</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- old code -->
 	<div class="widgets">
 		<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
 		<div >
