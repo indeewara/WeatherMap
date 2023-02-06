@@ -24,7 +24,7 @@ fetch('cities.json')
       .then(data => {
       var array = [];
       CityName = JSON.stringify(data.list[0].name);
-       //console.log(data.list[0].name);
+       console.log(data);
            let timezoneOffset = data.list[0].sys.timezone; 
            let date = new Date();
            date.setTime(date.getTime() + timezoneOffset * 1000);
@@ -41,6 +41,7 @@ fetch('cities.json')
           windDegree: parseInt(data.list[0].wind.deg),
           sunrise: timecal(new Date((data.list[0].sys.sunrise) * 1000)),
           sunset: timecal(new Date((data.list[0].sys.sunset) * 1000)),
+          Country:data.list[0].sys.country,
           currentTime: timecal(date),
           currentDate: datecal(date),
           weatherDes: data.list[0].weather[0].description,

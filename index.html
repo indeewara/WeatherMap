@@ -121,10 +121,13 @@
          	  <div style="display: flex;">
                  <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;">
 					  <div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;" name="cityname">
-						` + weatherData.cityName + `
+						`+weatherData.Country+ `, ` + weatherData.cityName + `
 					  </div>
 					  <div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;" name="dateandtime">
 						` + weatherData.currentTime + `, ` + weatherData.currentDate + `
+					  </div>
+					  <div style="position: relative; top: 80px; left: 140px; font-family: Arial, Helvetica, sans-serif ;font-size: 120% ; color: aliceblue;" name="dateandtime">
+						<img src="http://openweathermap.org/img/wn/${weatherData.weatherIcon}.png" alt="Weather Icon"> ` + weatherData.weatherDes + `
 					  </div>
 					</div>
 					<div style="background-image: url(${Top_left_div}); width: 280px; height: 217px; float: left;">
@@ -164,10 +167,6 @@
 					document.querySelector(".widgets").appendChild(widgetCell);
 				}
 			}
-			
-			
-			
-			
 			</script>
 		<!-- <a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
 		<div >
