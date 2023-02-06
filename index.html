@@ -48,45 +48,32 @@
 	<!-- /header -->
 
 	<!-- topics -->
+<!-- <script>
+	`${(() => {
+		switch (weatherData.weatherDes) {
+		  case 'overcast clouds':
+			return 'overcast clouds';
+		  case 'clear sky':
+		  return 'clear sky';
+		 case 'scattered clouds':
+		  return 'scattered clouds';
+		case 'broken clouds':
+		  return 'broken clouds';
+		case 'mist':
+		  return 'mist';
+		case 'few clouds':
+		  return 'few clouds';
+		case 'light rain':
+		  return 'light rain';
+		  default:
+			return 'Hello';
+		}
+	  })()}`
+
+	</script> -->
 
 <section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- old code -->
 	<div class="widgets">
 
 		<script>
@@ -98,11 +85,41 @@
 			  var widgetCell = document.createElement("div");
 			
 			  var weatherDiv = document.createElement("div");
+			  
+  let Top_right_div;
+  let Top_left_div;
+
+  let weatherDescription = weatherData.weatherDes;
+  if (weatherDescription === 'overcast clouds') {
+    Top_right_div = 'assets/images/Top_right_div_purple.jpg';
+	Top_left_div  = 'assets/images/Top_left_div_purple.jpg';
+  } else if (weatherDescription === 'clear sky') {
+	 Top_right_div = 'assets/images/Top_right_div_green.jpg';
+	 Top_left_div  = 'assets/images/Top_left_div_green.jpg';
+  } else if (weatherDescription === 'scattered clouds') {
+	Top_right_div = 'assets/images/Top_right_div_purple.jpg';
+	Top_left_div  = 'assets/images/Top_left_div_purple.jpg';
+  } else if (weatherDescription === 'broken clouds') {
+	Top_right_div = 'assets/images/Top_right_div_purple.jpg';
+	Top_left_div  = 'assets/images/Top_left_div_purple.jpg';
+  } else if (weatherDescription === 'mist') {
+	Top_right_div = 'assets/images/Top_right_div_red.jpg';
+	Top_left_div  = 'assets/images/Top_left_div_red.jpg';
+  } else if (weatherDescription === 'few clouds') {
+	Top_right_div = 'assets/images/Top_right_div.jpg';
+	Top_left_div  = 'assets/images/Top_left_div.jpg';
+  } else if (weatherDescription === 'light rain') {
+	Top_right_div = 'assets/images/Top_right_div_orange.jpg';
+	Top_left_div  = 'assets/images/Top_left_div_orange.jpg';
+  } else {
+    return 'error';
+  }
+
 			
 			  widgetCell.classList.add("widget-cell");
 			  widgetCell.innerHTML =  `<div style="display: flex; flex-direction: column;">
-				  <div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div.jpg'); width: 299px; height: 217px; float: right;">
+         	  <div style="display: flex;">
+                 <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;">
 					  <div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;" name="cityname">
 						` + weatherData.cityName + `
 					  </div>
@@ -110,7 +127,7 @@
 						` + weatherData.currentTime + `, ` + weatherData.currentDate + `
 					  </div>
 					</div>
-					<div style="background-image: url('assets/images/Top_left_div.jpg'); width: 280px; height: 217px; float: left;">
+					<div style="background-image: url(${Top_left_div}); width: 280px; height: 217px; float: left;">
 					  <div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;" name="cityname">
 						` + weatherData.temp + `°c
 					  </div>
@@ -145,8 +162,6 @@
 					</div>`
 			
 					document.querySelector(".widgets").appendChild(widgetCell);
-			
-			
 				}
 			}
 			
@@ -442,45 +457,6 @@
 			</div>
 		</div> -->
 
-
-
-			
-
-			
-		
-<!-- 
-		<div class="container">
-			<div class="top">
-			</div>
-			<div class="bottom" style="background-image: url(images/widgetBottom.jpg);">
-			</div>
-		  </div> -->
-
-		<!-- <div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-4 col-sm-6 mb-4">
-				<div></div>
-				<div id="widget_lower">
-                 <div> <div>
-
-				</div>	
-				</div>
-				<div class="col-lg-4 col-sm-6 mb-4">
-				
-				</div>
-				<div class="col-lg-4 col-sm-6 mb-4">
-			
-				</div>
-			</div>
-		</div> -->
-	<!-- </div> -->
-
-
-		<!-- /topics -->
-
-	<!-- footer -->
-	
-	<!-- /footer -->
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->

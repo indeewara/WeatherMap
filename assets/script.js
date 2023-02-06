@@ -52,7 +52,7 @@ fetch('cities.json')
 
         showweather(weatherArray);
 
-        console.log(weatherArray[0].cityName);
+        console.log(weatherData.weatherDes);
         
 
 
