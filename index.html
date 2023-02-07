@@ -33,45 +33,11 @@
 						<input type="search" class="form-control rounded" placeholder="Enter a City" aria-label="Search" aria-describedby="search-addon" />
 						<button type="button" class="btn btn-outline-primary" id="addcity">Add City</button>
 					  </div>
-
-
-					  
-					<!-- <div class="position-relative" id="search-icon">
-						<input class="form-control" placeholder="Enter a City">
-						<i class="ti-search search-icon"></i>
-					</div> -->
-				
 			</div>
 		</div>
 		<!-- /banner -->
 	</header>
 	<!-- /header -->
-
-	<!-- topics -->
-<!-- <script>
-	`${(() => {
-		switch (weatherData.weatherDes) {
-		  case 'overcast clouds':
-			return 'overcast clouds';
-		  case 'clear sky':
-		  return 'clear sky';
-		 case 'scattered clouds':
-		  return 'scattered clouds';
-		case 'broken clouds':
-		  return 'broken clouds';
-		case 'mist':
-		  return 'mist';
-		case 'few clouds':
-		  return 'few clouds';
-		case 'light rain':
-		  return 'light rain';
-		  default:
-			return 'Hello';
-		}
-	  })()}`
-
-	</script> -->
-
 <section>
 
 	<div class="widgets">
@@ -117,7 +83,9 @@
 
 			
 			  widgetCell.classList.add("widget-cell");
-			  widgetCell.innerHTML =  `<div style="display: flex; flex-direction: column;">
+			  widgetCell.innerHTML =  `
+			  <a href="http://127.0.0.1:5501/ViewWeather.html?country=${weatherData.Country}&City=${weatherData.cityName}&Time=${weatherData.currentTime}&Date=${weatherData.currentDate}&Icon=${weatherData.weatherIcon}&Wed=${weatherData.weatherDes}&Mintemp=${weatherData.minTemp}&Maxtemp=${weatherData.maxTemp}&Pressure=${weatherData.pressure}&Humidity=${weatherData.humidity}&Visibility=${weatherData.visibility}&windspeed=${weatherData.windSpeed}&winddegree=${weatherData.windDegree}&sunrise=${weatherData.sunrise}&sunset=${weatherData.sunset}&Temp=${weatherData.temp}">
+			  <div style="display: flex; flex-direction: column;">
          	  <div style="display: flex;">
                  <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;">
 					  <div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;" name="cityname">
@@ -145,7 +113,7 @@
 					  <div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;" name="dateandtime">
 						Pressure: ` + weatherData.pressure + `hPa   <br><br>
 						Humidity: ` + weatherData.humidity + `%  <br><br>
-						Visibility: `+ weatherData.humidity +`.0Km <br><br>
+						Visibility: `+ weatherData.visibility +`.0Km <br><br>
 								</div>
 								</div>
 								<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
@@ -162,300 +130,16 @@
 								</div>
 							</div>
 						</div>
-					</div>`
+					</div>
+					</a>`
 			
 					document.querySelector(".widgets").appendChild(widgetCell);
 				}
 			}
 			</script>
-		<!-- <a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
-		<div >
-			<div style="display: flex; flex-direction: column; ">
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div.jpg'); width: 299px; height: 217px; float: right;">
-						<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
-						Colombo,Lk</div>
-						<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
-							9.19 am, February 8</div>
-					</div>
-					<div style="background-image: url('assets/images/Top_left_div.jpg'); width: 280px; height: 217px; float: left;">
-						<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
-							27°c</div>
-							<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
-								Temp Min : 25°c<br>
-								Temp Max : 28°c<br>
-							
-							</div>
-					
-					</div>
-				</div>
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
-				<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-					 Pressure: 1018hPa   <br><br>
-					Humidity: 78%  <br><br>
-					Visibility: 8.0Km <br><br>
-					</div>
-					</div>
-					<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
-						<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-						40m/s 120 Degree
-						</div>
-					
-					</div>
-					<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
-						<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-							Sunrise: 6.05am   <br><br>
-							Sunset:  6.05pm  <br><br>
-						   </div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		</a>
-		<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
-         <div >
-			<div style="display: flex; flex-direction: column;">
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div_purple.jpg'); width: 299px; height: 217px; float: right;">
-						<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
-						Colombo,Lk</div>
-						<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
-							9.19 am, February 8</div>
-					</div>
-					<div style="background-image: url('assets/images/Top_left_div_purple.jpg'); width: 280px; height: 217px; float: left;">
-						<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
-							27°c</div>
-							<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
-								Temp Min : 25°c<br>
-								Temp Max : 28°c<br>
-							
-							</div>
-					
-					</div>
-				</div>
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
-				<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-					 Pressure: 1018hPa   <br><br>
-					Humidity: 78%  <br><br>
-					Visibility: 8.0Km <br><br>
-					</div>
-					</div>
-					<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
-						<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-						40m/s 120 Degree
-						</div>
-					
-					</div>
-					<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
-						<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-							Sunrise: 6.05am   <br><br>
-							Sunset:  6.05pm  <br><br>
-						   </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
-		<div >
-			<div style="display: flex; flex-direction: column;">
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div_green.jpg'); width: 299px; height: 217px; float: right;">
-						<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
-						Colombo,Lk</div>
-						<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
-							9.19 am, February 8</div>
-					</div>
-					<div style="background-image: url('assets/images/Top_left_div_green.jpg'); width: 280px; height: 217px; float: left;">
-						<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
-							27°c</div>
-							<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
-								Temp Min : 25°c<br>
-								Temp Max : 28°c<br>
-							
-							</div>
-					
-					</div>
-				</div>
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
-				<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-					 Pressure: 1018hPa   <br><br>
-					Humidity: 78%  <br><br>
-					Visibility: 8.0Km <br><br>
-					</div>
-					</div>
-					<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
-						<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-						40m/s 120 Degree
-						</div>
-					
-					</div>
-					<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
-						<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-							Sunrise: 6.05am   <br><br>
-							Sunset:  6.05pm  <br><br>
-						   </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
-		<div >
-			<div style="display: flex; flex-direction: column;">
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div_orange.jpg'); width: 299px; height: 217px; float: right;">
-						<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
-						Colombo,Lk</div>
-						<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
-							9.19 am, February 8</div>
-					</div>
-					<div style="background-image: url('assets/images/Top_left_div_orange.jpg'); width: 280px; height: 217px; float: left;">
-						<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
-							27°c</div>
-							<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
-								Temp Min : 25°c<br>
-								Temp Max : 28°c<br>
-							
-							</div>
-					
-					</div>
-				</div>
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
-				<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-					 Pressure: 1018hPa   <br><br>
-					Humidity: 78%  <br><br>
-					Visibility: 8.0Km <br><br>
-					</div>
-					</div>
-					<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
-						<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-						40m/s 120 Degree
-						</div>
-					
-					</div>
-					<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
-						<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-							Sunrise: 6.05am   <br><br>
-							Sunset:  6.05pm  <br><br>
-						   </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="http://127.0.0.1:5501/ViewWeather.html?param=1">
-     	<div >
-			<div style="display: flex; flex-direction: column;">
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/Top_right_div_red.jpg'); width: 299px; height: 217px; float: right;">
-						<div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;"name="cityname">
-						Colombo,Lk</div>
-						<div style="position: relative; top: 60px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 70% ; color: aliceblue;"name="dateandtime">
-							9.19 am, February 8</div>
-					</div>
-					<div style="background-image: url('assets/images/Top_left_div_red.jpg'); width: 280px; height: 217px; float: left;">
-						<div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;"name="cityname">
-							27°c</div>
-							<div style="position: relative; top: 60px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 80% ; color: aliceblue;"name="dateandtime">
-								Temp Min : 25°c<br>
-								Temp Max : 28°c<br>
-							
-							</div>
-					
-					</div>
-				</div>
-				<div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
-				<div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-					 Pressure: 1018hPa   <br><br>
-					Humidity: 78%  <br><br>
-					Visibility: 8.0Km <br><br>
-					</div>
-					</div>
-					<div style="background-image: url('assets/images/bottom_center_div.jpg'); width: 176px; height: 151px;">
-						<div style="position: relative; top: 85px; left: 30px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-						40m/s 120 Degree
-						</div>
-					
-					</div>
-					<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
-						<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
-							Sunrise: 6.05am   <br><br>
-							Sunset:  6.05pm  <br><br>
-						   </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</a>
-		<div ></div> -->
 	  </div>
  
 </section>
-
-
-<!-- 
-	<div class="grid-container">
-		<div class="grid-item">
-	
-
-		</div>
-		<div class="grid-item">
-	
-		</div>
-		<div class="grid-item">
-
-
-		</div>
-		<div class="grid-item">
-	
-
-
-		</div>
-		<div class="grid-item">
-
-
-
-			
-		</div>
-		<div class="grid-item"></div>
-	  </div> -->
-
-
-
-	
-
-
-			
-		  
-
-
-
-	
-	
-		<!-- <div style="display: flex; flex-direction: column;">
-			<div style="display: flex;">
-				<div style="background-image: url('assets/images/Top_right_div.jpg'); width: 299px; height: 217px; float: right;">
-					<div> </div>
-					<div style="color: aliceblue;">the tempraature is : </div>
-
-				</div>
-				<div style="background-image: url('assets/images/Top_left_div.gif'); width: 299px; height: 217px; float: left;"> Hello mother fucjer</div>
-				
-			</div>
-			<div style="display: flex;">
-				<div style="background-image: url('assets/images/bottom_left_div.gif'); width: 211px; height: 151px; float: left;">adwwa</div>
-				<div style="background-image: url('assets/images/bottom_center_div.gif'); width: 176px; height: 151px; margin: 0 auto;">awdw</div>
-				<div style="background-image: url('assets/images/bottom_right_div.gif'); width: 191px; height: 151px; float: right;">awdwa</div>
-			</div>
-		</div> -->
-
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->
