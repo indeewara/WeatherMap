@@ -182,5 +182,54 @@ color: #dee2e6;
   .widgets { grid-template-columns: repeat(2, 1fr); }
 }
 
-  
+
+
+.showWidget {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .showWidget {
+    flex-direction: column;
+  }
+}
+
+
+.body-bg {
+  background: url(images/ViewWeather.jpg) no-repeat center center/cover;
+  background-size:cover;
+}
+
+
+/* @media only screen and (max-width: 600px) {
+  .ShowWidgets {
+    flex-direction: column;
+  }
+
+  [style*="float: right;"] {
+    float: none;
+  }
+
+  [style*="width: 1201px;"] {
+    width: 100%;
+  }
+
+  [style*="width: 616px;"] {
+    width: 100%;
+  }
+
+  [style*="width: 585px;"] {
+    width: 100%;
+  }
+
+  [style*="width: 466px;"] {
+    width: 100%;
+  }
+} */
 

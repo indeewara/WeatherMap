@@ -24,7 +24,7 @@ fetch('cities.json')
       .then(data => {
       var array = [];
       CityName = JSON.stringify(data.list[0].name);
-       console.log(data);
+       //console.log(data);
            let timezoneOffset = data.list[0].sys.timezone; 
            let date = new Date();
            date.setTime(date.getTime() + timezoneOffset * 1000);
@@ -51,64 +51,7 @@ fetch('cities.json')
         var weatherArray = [];
         weatherArray.push(weatherData);
 
-        showweather(weatherArray);
-
-        console.log(weatherData.weatherDes);
-        
-
-
-
-
-
-
-
-
-
-
-      
-
-    //   Temp = Math.round(parseInt(data.list[0].main.temp));
-    //   MaxTemp = Math.round(parseInt(data.list[0].main.temp_max));
-    //   MinTemp = Math.round(parseInt(data.list[0].main.temp_min));
-    //   Pressure =  parseInt(data.list[0].main.pressure);
-    //   Humidity =  parseInt(data.list[0].main.humidity);
-    //   Visibility =  parseInt(data.list[0].visibility)/1000;
-    //   WindSpeed = parseFloat(data.list[0].wind.speed);
-    //   WindDegree = parseInt(data.list[0].wind.deg);
-    //       let date1 = new Date((data.list[0].sys.sunrise )* 1000);
-    //   Sunrise=timecal(date1);
-    //       let date2 = new Date((data.list[0].sys.sunset )* 1000);
-    //   Sunset=timecal(date2);
-    //       let timezoneOffset = data.list[0].sys.timezone;  
-    //       let date = new Date();
-    //   date.setTime(date.getTime() + timezoneOffset * 1000);
-    //   currentTime = timecal(date);
-    //   currentDate = datecal(date);
-    //   WeatherDes  = JSON.stringify(data.list[0].weather[0].description);
-    //   WeatherIcon  = data.list[0].weather[0].icon;
-
-    // // let icon=`http://openweathermap.org/img/wn/${WeatherIcon}.png`;
-   
-    // let weatherData = [
-    //   CityName,
-    //   Temp,
-    //   MaxTemp,
-    //   MinTemp,
-    //   Pressure,
-    //   Humidity,
-    //   Visibility,
-    //   WindSpeed,
-    //   WindDegree,
-    //   Sunrise,
-    //   Sunset,
-    //   currentTime,
-    //   currentDate,
-    //   WeatherDes,
-    //   WeatherIcon
-    // ];
-
-    // console.log(weatherData);
-    
+        showweather(weatherArray);    
 
       })
       .catch(error => {

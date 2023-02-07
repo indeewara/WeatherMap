@@ -20,7 +20,7 @@
 	<link href="assets/style.css" rel="stylesheet" media="screen" />
 </head>
 
-<body style="background-image: URL(assets/images/ViewWeather.jpg);background-size:cover;background-position: center">
+<body class="body-bg">
 	
 	<!-- header -->
 	<header>
@@ -28,36 +28,132 @@
 			<div class="row">
 				<div class="col-lg-8 text-center mx-auto">
 					<h id="headertext"><img src="assets/images/App_Logo.jpg" width="237" height="47" alt=""></h>
-					<div style="height: 70px; width: 100px"></div>	
-					
-				<div style="height: 600px"></div>
-					
-
-
-					  
-					<!-- <div class="position-relative" id="search-icon">
-						<input class="form-control" placeholder="Enter a City">
-						<i class="ti-search search-icon"></i>
-					</div> -->
+					<div style="height: 70px; width: 100px"></div>			
 				
 			</div>
 		</div>
 		<!-- /banner -->
 	</header>
 	<!-- /header -->
+<section>
+	<div id="container"></div>
 
-	<!-- topics -->
-<script>
-const urlParams = new URLSearchParams(window.location.search);
-const param1 = urlParams.get('param');
+	<script>		const urlParams = new URLSearchParams(window.location.search);
 
-console.log(param);
+  let Top_right_div;
+  let Top_left_div;
+  let Center_div;
+
+  let weatherDescription = urlParams.get('Wed');
+  if (weatherDescription === 'overcast clouds') {
+	Top_right_div = 'assets/images/Top_Right_purple_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_purple_2.jpg';
+	Center_div = 'assets/images/Center_purple_2.jpg';
+  } else if (weatherDescription === 'clear sky') {
+	 Top_right_div = 'assets/images/Top_Right_green_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_green_2.jpg';
+	Center_div = 'assets/images/Center_green_2.jpg';
+
+  } else if (weatherDescription === 'scattered clouds') {
+	Top_right_div = 'assets/images/Top_Right_purple_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_purple_2.jpg';
+	Center_div = 'assets/images/Center_purple_2.jpg';
+  } else if (weatherDescription === 'broken clouds') {
+	Top_right_div = 'assets/images/Top_Right_purple_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_purple_2.jpg';
+	Center_div = 'assets/images/Center_purple_2.jpg';
+  } else if (weatherDescription === 'mist') {
+
+	Top_right_div = 'assets/images/Top_Right_red_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_red_2.jpg';
+	Center_div = 'assets/images/Center_red_2.jpg';
+
+  } else if (weatherDescription === 'few clouds') {
+	Top_right_div = 'assets/images/Top_Right_Blue_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_Blue_2.jpg';
+	Center_div = 'assets/images/Center_Blue_2.jpg';
+  } else if (weatherDescription === 'light rain') {
+	Top_right_div = 'assets/images/Top_Right_orange_2.jpg';
+	Top_left_div  = 'assets/images/Top_Left_orange_2.jpg';
+	Center_div = 'assets/images/Center_orange_2.jpg';
+  } else {
+    ""
+  }
+
+
+//   const root = document.getElementById("root");
+  const html = `<div class="ShowWidgets">
+      <div style="display: flex; justify-content: center;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex;">
+            <div style="background-image: url(${Center_div}); width: 1201px; height: 190px; float: right;">
+				<div style="position: relative; top: 50px; left: 500px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ;color: aliceblue;" name="cityname">
+				 <b>${urlParams.get('City')} , ${urlParams.get('country')}</b>
+			    </div>
+				<div style="position: relative; top: 50px; left: 518px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Date">
+				 ${urlParams.get('Time')} , ${urlParams.get('Date')}
+			    </div>
+            </div>
+          </div>
+          <div style="display: flex;">
+            <div style="background-image:url(${Top_left_div}) ; width: 616px; height: 201px; float: right;">
+				<div style="position: relative; top: 0px; left: 400px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Icon">
+					<img src="http://openweathermap.org/img/wn/${urlParams.get('Icon')}.png" alt="Weather Icon" style="width: 100px; height: 100px;">
+                   </div>
+				   <div style="position: relative; top: 0px; left: 400px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wed">
+					${urlParams.get('Wed')} 
+                   </div>
+				
+				</div>
+            <div style="background-image: url(${Top_left_div}); width: 585px; height: 201px; float: left;">
+				<div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 300% ;color: aliceblue;" name="Temp">
+					${urlParams.get('Temp')}°c
+                   </div>
+				   <div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Mintemp">
+					Temp Min : ${urlParams.get('Mintemp')} 
+                   </div>
+				   <div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Maxtemp">
+					Temp Max :${urlParams.get('Maxtemp')} 
+                   </div>
+				
+				
+				</div>
+          </div>
+          <div style="display: flex;">
+			<div style="background-image: url('assets/images/Bottom_Left_Div_2(2).jpg'); width: 466px; height: 206px; float: left;">
+				<div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Pressure">
+					Pressure :${urlParams.get('Pressure')}hPa
+                   </div>
+				   <div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Hum">
+					Humidity :${urlParams.get('Humidity')}%
+                   </div>
+				   <div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Vis">
+					Visibility  :${urlParams.get('Visibility')}km
+                   </div>
+				</div>
+		<div style="background-image: url('assets/images/Bottom_Center_Div_2.jpg'); width: 259px; height: 206px; float: right;;">
+			<div style="position: relative; top: 105px; left: 63px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wind">
+					${urlParams.get('windspeed')}m/s  ${urlParams.get('winddegree')} Degree
+                   </div>
+			</div>
+		<div style="background-image: url('assets/images/Bottom_Right_Div_2.jpg'); width: 476px; height: 206px; float: right;;">
+			<div style="position: relative; top: 65px; left: 110px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunrise">
+					Sunrise : ${urlParams.get('sunrise')}
+                   </div>
+				   <div style="position: relative; top: 65px; left: 110px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunset">
+					Sunset : ${urlParams.get('sunset')}
+                   </div>
+				</div>
+			</div>
+        </div>
+      </div>`;
+	  container.innerHTML = html;
+	
+	
 </script>
 
-
-	
-<section>
-
+   
+</section>
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->
