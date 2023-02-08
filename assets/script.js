@@ -18,7 +18,7 @@ fetch('cities.json')
   .then(CityCodes => {
     for (let i = 0; i < CityCodes.length; i++) {
       id=CityCodes[i]+",";
-      let URL = `http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=71bca8bb316a592a049da20874f36394`; 
+      let URL = `http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=5c4de2c618fa3cbf2a018fa424993520`; 
       fetch(URL)
       .then(response => response.json())
       .then(data => {
