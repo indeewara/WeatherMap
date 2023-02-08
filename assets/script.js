@@ -1,5 +1,5 @@
 
-
+function fetchWeatherData(){
 fetch('cities.json')
   .then(response => response.json())
   .then(data => {
@@ -60,6 +60,8 @@ fetch('cities.json')
 
   }})
   .catch(error => console.error(error));
+}
+
 
 function timecal(date){
   let hours = date.getHours();
@@ -84,5 +86,6 @@ function datecal(date){
   return date.toLocaleDateString('en-US', options);  
 
 }
+
 
 
