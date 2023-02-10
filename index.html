@@ -4,9 +4,9 @@
 <head>
 
 	<script>
-		window.onload = function() {
-			fetchWeatherData();
-		}
+		// window.onload = function() {
+		// 	fetchWeatherData();
+		// }
 	</script>
 	
 	<meta charset="utf-8">
@@ -37,7 +37,7 @@
 					<h id="headertext"><img src="assets/images/App_Logo.jpg" width="237" height="47" alt=""></h>
 					<div style="height: 70px; width: 100px"></div>			
 					 <div class="input-group">
-						<input type="search" class="form-control rounded" placeholder="Enter a City" aria-label="Search" aria-describedby="search-addon" />
+						<input type="search" class="form-control rounded" placeholder="Enter a City" aria-label="Search" aria-describedby="search-addon "style="" />
 						<button type="button" class="btn btn-outline-primary" id="addcity">Add City</button>
 					  </div>
 			</div>
@@ -51,6 +51,9 @@
 
 		<script>
 			function showweather(weatherArray){
+
+
+	
 			var divContainer = document.getElementById("divContainer");
 			
 			for (var i = 0; i < weatherArray.length; i++) {
@@ -94,7 +97,7 @@
 			  <a href="http://127.0.0.1:5501/ViewWeather.html?country=${weatherData.Country}&City=${weatherData.cityName}&Time=${weatherData.currentTime}&Date=${weatherData.currentDate}&Icon=${weatherData.weatherIcon}&Wed=${weatherData.weatherDes}&Mintemp=${weatherData.minTemp}&Maxtemp=${weatherData.maxTemp}&Pressure=${weatherData.pressure}&Humidity=${weatherData.humidity}&Visibility=${weatherData.visibility}&windspeed=${weatherData.windSpeed}&winddegree=${weatherData.windDegree}&sunrise=${weatherData.sunrise}&sunset=${weatherData.sunset}&Temp=${weatherData.temp}">
 			  <div style="display: flex; flex-direction: column;">
          	  <div style="display: flex;">
-                 <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;">
+                 <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;border-radius: 10px 0 0 0;">
 					  <div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;" name="cityname">
 						`+weatherData.Country+ `, ` + weatherData.cityName + `
 					  </div>
@@ -105,7 +108,7 @@
 						<img src="http://openweathermap.org/img/wn/${weatherData.weatherIcon}.png" alt="Weather Icon"> ` + weatherData.weatherDes + `
 					  </div>
 					</div>
-					<div style="background-image: url(${Top_left_div}); width: 280px; height: 217px; float: left;">
+					<div style="background-image: url(${Top_left_div}); width: 280px; height: 217px; float: left;border-radius: 0 10px 0 0;">
 					  <div style="position: relative; top: 45px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 340% ; color: aliceblue;" name="cityname">
 						` + weatherData.temp + `°c
 					  </div>
@@ -116,7 +119,7 @@
 					</div>
 				  </div>
 				  <div style="display: flex;">
-					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;">
+					<div style="background-image: url('assets/images/bottom_left_div.jpg'); width: 211px; height: 151px; float: left;border-radius: 0 0 0 10px;"">
 					  <div style="position: relative; top: 30px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;" name="dateandtime">
 						Pressure: ` + weatherData.pressure + `hPa   <br><br>
 						Humidity: ` + weatherData.humidity + `%  <br><br>
@@ -129,7 +132,7 @@
 									</div>
 								
 								</div>
-								<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;">
+								<div style="background-image: url('assets/images/bottom_right_div.jpg'); width: 192px; height: 151px; float: right;border-radius: 0 0 10px 0">
 									<div style="position: relative; top: 50px; left: 55px; font-family: Arial, Helvetica, sans-serif ;font-size: 90% ; color: aliceblue;"name="dateandtime">
 										Sunrise: `+ weatherData.sunrise +` <br><br>
 										Sunset: `+ weatherData.sunset +`  <br><br>
@@ -147,6 +150,11 @@
 	  </div>
  
 </section>
+
+<br>
+<br>
+<br>
+<br>
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->

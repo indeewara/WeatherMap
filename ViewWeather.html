@@ -82,71 +82,100 @@
 
 
 //   const root = document.getElementById("root");
-  const html = `<div class="ShowWidgets">
-      <div style="display: flex; justify-content: center;">
-        <div style="display: flex; flex-direction: column;">
-          <div style="display: flex;">
-            <div style="background-image: url(${Center_div}); width: 1201px; height: 190px; float: right;">
-				<div style="position: relative; top: 50px; left: 500px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ;color: aliceblue;" name="cityname">
+  const html = 
+  `<div class="container text-center">
+  <div class="row">
+    
+
+		<div class ="col" style="background-image: url(${Center_div}); width: 100%; height: 190px; float: right;margin: auto;">
+				<div style="position: relative; top: 50px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ;color: aliceblue;" name="cityname">
 				 <b>${urlParams.get('City')} , ${urlParams.get('country')}</b>
 			    </div>
-				<div style="position: relative; top: 50px; left: 518px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Date">
+				<div style="position: relative; top: 50px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Date">
 				 ${urlParams.get('Time')} , ${urlParams.get('Date')}
 			    </div>
-            </div>
-          </div>
-          <div style="display: flex;">
-            <div style="background-image:url(${Top_left_div}) ; width: 616px; height: 201px; float: right;">
-				<div style="position: relative; top: 0px; left: 400px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Icon">
-					<img src="http://openweathermap.org/img/wn/${urlParams.get('Icon')}.png" alt="Weather Icon" style="width: 100px; height: 100px;">
+      </div>
+	  </div>
+
+<div class="row">
+
+
+
+
+		<div class="col" style="background-image:url(${Top_right_div}) ; width: 100%; height: 201px;">
+				<div style="position: relative; top: 0px; left: -100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Icon">
+					<img src="http://openweathermap.org/img/wn/${urlParams.get('Icon')}.png" alt="Weather Icon" style="width: 100px; height: 100px; l "></img>
                    </div>
-				   <div style="position: relative; top: 0px; left: 400px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wed">
+				   <div style="position: relative; top: 0px; left: -100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wed">
 					${urlParams.get('Wed')} 
                    </div>
-				
-				</div>
-            <div style="background-image: url(${Top_left_div}); width: 585px; height: 201px; float: left;">
-				<div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 300% ;color: aliceblue;" name="Temp">
+
+				   <div class="col" style="background-image: url(${Top_left_div}); width: 100%; height: 201px;">
+				<div style="position: relative; top: -120px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 300% ;color: aliceblue;" name="Temp">
 					${urlParams.get('Temp')}°c
                    </div>
-				   <div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Mintemp">
+				   <div style="position: relative; top: -100px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Mintemp">
 					Temp Min : ${urlParams.get('Mintemp')} 
                    </div>
-				   <div style="position: relative; top: 0px; left: 40px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Maxtemp">
+				   <div style="position: relative; top: -100px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Maxtemp">
 					Temp Max :${urlParams.get('Maxtemp')} 
                    </div>
 				
-				
-				</div>
-          </div>
-          <div style="display: flex;">
-			<div style="background-image: url('assets/images/Bottom_Left_Div_2(2).jpg'); width: 466px; height: 206px; float: left;">
-				<div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Pressure">
-					Pressure :${urlParams.get('Pressure')}hPa
-                   </div>
-				   <div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Hum">
-					Humidity :${urlParams.get('Humidity')}%
-                   </div>
-				   <div style="position: relative; top: 65px; left: 250px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Vis">
-					Visibility  :${urlParams.get('Visibility')}km
-                   </div>
-				</div>
-		<div style="background-image: url('assets/images/Bottom_Center_Div_2.jpg'); width: 259px; height: 206px; float: right;;">
-			<div style="position: relative; top: 105px; left: 63px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wind">
-					${urlParams.get('windspeed')}m/s  ${urlParams.get('winddegree')} Degree
-                   </div>
-			</div>
-		<div style="background-image: url('assets/images/Bottom_Right_Div_2.jpg'); width: 476px; height: 206px; float: right;;">
-			<div style="position: relative; top: 65px; left: 110px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunrise">
-					Sunrise : ${urlParams.get('sunrise')}
-                   </div>
-				   <div style="position: relative; top: 65px; left: 110px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunset">
-					Sunset : ${urlParams.get('sunset')}
-                   </div>
-				</div>
-			</div>
-        </div>
-      </div>`;
+
+  </div>
+
+
+
+</div>
+    
+
+
+
+
+</div>
+
+<div class="row">
+		
+		<div div class="col" style="background-image: url('assets/images/Bottom_Left_Div_2(2).jpg'); width: 20px; height: 206px;">
+					  <div style="position: relative; top: 65px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Pressure">
+						  Pressure :${urlParams.get('Pressure')}hPa
+						 </div>
+						 <div style="position: relative; top: 65px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Hum">
+						  Humidity :${urlParams.get('Humidity')}%
+						 </div>
+						 <div style="position: relative; top: 65px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Vis">
+						  Visibility  :${urlParams.get('Visibility')}km
+						 </div>
+					  </div>
+
+	
+		
+			<div class="col" style="background-image: url('assets/images/Bottom_Center_Div_2.jpg'); width: 100%; height: 206px;">
+				  <div style="position: relative; top: 105px; left: -10px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wind">
+						  ${urlParams.get('windspeed')}m/s  ${urlParams.get('winddegree')} Degree
+						 </div>
+				  </div>
+        
+		
+            <div class="col" style="background-image: url('assets/images/Bottom_Right_Div_2.jpg'); width: 10%; height: 206px;">
+
+				  <div style="position: relative; top: 65px; left: 10px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunrise">
+						  Sunrise : ${urlParams.get('sunrise')}
+						 </div>
+						 <div style="position: relative; top: 65px; left: 10px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunset">
+						  Sunset : ${urlParams.get('sunset')}
+						 </div>
+					  </div>
+	
+</div>
+
+</div>`
+
+
+
+
+
+
 	  container.innerHTML = html;
 	
 	
@@ -154,6 +183,8 @@
 
    
 </section>
+
+<br>
 
 	<!-- ** JS Plugins Needed for the Project ** -->
 	<!-- jquiry -->
