@@ -36,7 +36,9 @@ fetch('cities.json')
     for (let i = 0; i < CityCodes.length; i++) {
       id=CityCodes[i]+",";
       renderWeather(id);
-      async function renderWeather(id) {
+async function renderWeather(id) {
+
+// async function fetchWithCache(id){
 
 
       
@@ -77,14 +79,11 @@ fetch('cities.json')
       
         var weatherArray = [];
         weatherArray.push(weatherData);
+         
+    
 
-        localStorage.setItem(cacheKey, JSON.stringify({
-          cacheTime: Date.now(),
-          weatherArray,
-        }));
-  
+   
 
-        
 
         //  console.log( i);
         // console.log(CityCodes.length);
@@ -98,7 +97,7 @@ fetch('cities.json')
     }
   });
 
-
+ console.log(id);
 //       })
 //       .catch(error => {
 //         console.error(error);
@@ -107,32 +106,67 @@ fetch('cities.json')
 //   }})
 //   .catch(error => console.error(error));
 // // }
+// function setCookie(cname, cvalue, exminutes) {
+//   var d = new Date();
+//   d.setTime(d.getTime() + (exminutes*60*1000));
+//   var expires = "expires="+ d.toUTCString();
+//   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+// }
+
+// function getCookie(cname) {
+//   var name = cname + "=";
+//   var decodedCookie = decodeURIComponent(document.cookie);
+//   var ca = decodedCookie.split(';');
+//   for(var i = 0; i <ca.length; i++) {
+//     var c = ca[i];
+//     while (c.charAt(0) == ' ') {
+//       c = c.substring(1);
+//     }
+//     if (c.indexOf(name) == 0) {
+//       return c.substring(name.length, c.length);
+//     }
+//   }
+//   return "";
+// }
+
+// const cache = {};
+// let cacheTimer = 30000;
+
+// async function fetchWithCache(id) {
+//   const now = new Date().getTime()
+//   // if (!cache || cache.cacheTimer < now) {
+//     cache = await fetchWeather(id);
+//   // }
+//   console.log(cache);
+//   return cache
+  
+// }
 
 
+   
 async function fetchWeather(id) {
   try {
 
-  //check is the cookie empty or expired , then create the cookie fill data into cookie
-        //else 
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=5c4de2c618fa3cbf2a018fa424993520`, {
+     const response = await fetch(`http://api.openweathermap.org/data/2.5/group?id=${id}&units=metric&appid=5c4de2c618fa3cbf2a018fa424993520`, {
           method: 'GET',
           credentials: 'same-origin'
       });
-      const exam = await response.json();
 
-     // ck = exam;
-     //return ck -> get the data then return 
-      return exam;
+      const weather = await response.json();
 
-   
+      // var weatherData = JSON.stringify(weather);
+
+
+      return weather;
 
   } catch (error) {
-      // console.error(error);
+     
   }
 }
 
+// let x = document.cookie;
 
-
+// console.log(JSON.stringify(x));
 
 
 
