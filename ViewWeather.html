@@ -87,11 +87,12 @@
   <div class="row">
     
 
-		<div class ="col" style="background-image: url(${Center_div});position:cover; width: 100%; height: 190px; float: right;margin: auto;">
-				<div style="position: relative; top: 50px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ;color: aliceblue;" name="cityname">
+		<div class ="col" style="background-image: url(${Center_div});position:cover; width: 100%; height: 190px; float: right;margin: auto;border-radius: 0 10px 0 0;">
+			<a href="http://127.0.0.1:5501/index.html"><div style="position: relative; top: 20px; left: -0px;background-image:url('assets/images/back.png');background-size:cover;width: 20px; height: 20px;"> </div></a>
+				<div style="position: relative; top: 50px; left: -20px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ;color: aliceblue;" name="cityname">
 				 <b>${urlParams.get('City')} , ${urlParams.get('country')}</b>
 			    </div>
-				<div style="position: relative; top: 50px; left: 50px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Date">
+				<div style="position: relative; top: 50px; left: -20px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Date">
 				 ${urlParams.get('Time')} , ${urlParams.get('Date')}
 			    </div>
       </div>
@@ -103,21 +104,21 @@
 
 
 		<div class="col" style="background-image:url(${Top_right_div}) ; width: 100%; height: 201px;">
-				<div style="position: relative; top: 0px; left: -100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Icon">
+				<div style="position: relative; top: 0px; left: -150px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Icon">
 					<img src="http://openweathermap.org/img/wn/${urlParams.get('Icon')}.png" alt="Weather Icon" style="width: 100px; height: 100px; l "></img>
                    </div>
-				   <div style="position: relative; top: 0px; left: -100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wed">
+				   <div style="position: relative; top: 0px; left: -150px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Wed">
 					${urlParams.get('Wed')} 
                    </div>
 
 				   <div class="col" style="background-image: url(${Top_left_div}); width: 100%; height: 201px;">
-				<div style="position: relative; top: -120px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 300% ;color: aliceblue;" name="Temp">
+				<div style="position: relative; top: -120px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 300% ;color: aliceblue;" name="Temp">
 					${urlParams.get('Temp')}°c
                    </div>
-				   <div style="position: relative; top: -100px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Mintemp">
+				   <div style="position: relative; top: -100px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Mintemp">
 					Temp Min : ${urlParams.get('Mintemp')} 
                    </div>
-				   <div style="position: relative; top: -100px; left: 200px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Maxtemp">
+				   <div style="position: relative; top: -100px; left: 100px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="Maxtemp">
 					Temp Max :${urlParams.get('Maxtemp')} 
                    </div>
 				
@@ -157,7 +158,7 @@
 				  </div>
         
 		
-            <div class="col" style="background-image: url('assets/images/Bottom_Right_Div_2.jpg'); width: 10%; height: 206px;">
+            <div class="col" style="background-image: url('assets/images/Bottom_Right_Div_2.jpg'); width: 10%; height: 206px;border-radius: 0 0 10px 0;">
 
 				  <div style="position: relative; top: 65px; left: 10px; font-family: Arial, Helvetica, sans-serif ;font-size: 100% ;color: aliceblue;" name="sunrise">
 						  Sunrise : ${urlParams.get('sunrise')}
@@ -184,6 +185,9 @@
    
 </section>
 
+<br>
+<br>
+<br>
 <br>
 
 	<!-- ** JS Plugins Needed for the Project ** -->

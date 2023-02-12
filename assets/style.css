@@ -1,6 +1,4 @@
 :root {
-  /* --primary-color: #02007e; */
-  /* --body-color: #f9f9f9; */
   --text-color: #636363;
   --text-color-dark: #242738;
   --white-color: #ffffff;
@@ -14,14 +12,11 @@ body {
   background-image: url(images/DashboardBackground.jpg) ;
   background-size:cover;
   background-position: center;
-
-  /* position:fixed; */
   line-height: 1.5;
   font-family: var(--font-family), sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 17px;
   color: var(--text-color);
-  /* background-color:#242738; */
 }
 
 .banner {
@@ -59,10 +54,6 @@ p {
   }
 }
 
-.section-title {
-  margin-bottom: 40px
-}
-
 .bg-cover {
   background-size: cover;
   background-position: 50%;
@@ -98,31 +89,6 @@ p {
   height: 100%;
 }
 
-.top-section {
-  background-image: url(images/top-section-bg.jpg);
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-}
-
-.top-section {
-  background-image: url(images/WeatherApptop.jpg);
-  height: 100px;
-  background-size: cover;  /* This will make sure the entire image is shown */
-  background-repeat: no-repeat; /* This will prevent the image from repeating */
-}
-
-.bottom-section {
-  background-image: url(images/widgetBottom.jpg);
-  height: 100px;
-  background-size: cover;  /* This will make sure the entire image is shown */
-  background-repeat: no-repeat; /* This will prevent the image from repeating */
-}
-
-
-/* grid */
-
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -150,10 +116,6 @@ p {
   
 }
 .grid-item {
-  /* background-color: lightblue; */
-  
-  /* border: 1px solid black; */
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,43 +168,4 @@ color: #dee2e6;
   background-size:cover;
 }
 
-
-/* @media only screen and (max-width: 600px) {
-  .ShowWidgets {
-    flex-direction: column;
-  }
-
-  [style*="float: right;"] {
-    float: none;
-  }
-
-  [style*="width: 1201px;"] {
-    width: 100%;
-  }
-
-  [style*="width: 616px;"] {
-    width: 100%;
-  }
-
-  [style*="width: 585px;"] {
-    width: 100%;
-  }
-
-  [style*="width: 466px;"] {
-    width: 100%;
-  }
-} */
-
-/* .ShowWidgets {
-  width: 100%;
-  height: 200px;
-  background-color: lightblue;
-}
-
-@media only screen and (max-width: 768px) {
-  .ShowWidgets {
-    width: 50%;
-    height: 100px;
-  }
-} */
 

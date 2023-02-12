@@ -4,9 +4,9 @@
 <head>
 
 	<script>
-		// window.onload = function() {
-		// 	fetchWeatherData();
-		// }
+		window.onload = function() {
+			WeatherDataCache();
+		}
 	</script>
 	
 	<meta charset="utf-8">
@@ -52,7 +52,6 @@
 		<script>
 			function showweather(weatherArray){
 
-
 	
 			var divContainer = document.getElementById("divContainer");
 			
@@ -93,11 +92,12 @@
 
 			
 			  widgetCell.classList.add("widget-cell");
-			  widgetCell.innerHTML =  `
-			  <a href="http://127.0.0.1:5501/ViewWeather.html?country=${weatherData.Country}&City=${weatherData.cityName}&Time=${weatherData.currentTime}&Date=${weatherData.currentDate}&Icon=${weatherData.weatherIcon}&Wed=${weatherData.weatherDes}&Mintemp=${weatherData.minTemp}&Maxtemp=${weatherData.maxTemp}&Pressure=${weatherData.pressure}&Humidity=${weatherData.humidity}&Visibility=${weatherData.visibility}&windspeed=${weatherData.windSpeed}&winddegree=${weatherData.windDegree}&sunrise=${weatherData.sunrise}&sunset=${weatherData.sunset}&Temp=${weatherData.temp}">
+			  widgetCell.innerHTML =  
+			  `<a href="http://127.0.0.1:5501/ViewWeather.html?country=${weatherData.Country}&City=${weatherData.cityName}&Time=${weatherData.currentTime}&Date=${weatherData.currentDate}&Icon=${weatherData.weatherIcon}&Wed=${weatherData.weatherDes}&Mintemp=${weatherData.minTemp}&Maxtemp=${weatherData.maxTemp}&Pressure=${weatherData.pressure}&Humidity=${weatherData.humidity}&Visibility=${weatherData.visibility}&windspeed=${weatherData.windSpeed}&winddegree=${weatherData.windDegree}&sunrise=${weatherData.sunrise}&sunset=${weatherData.sunset}&Temp=${weatherData.temp}">
 			  <div style="display: flex; flex-direction: column;">
          	  <div style="display: flex;">
                  <div style="background-image: url(${Top_right_div}); width: 299px; height: 217px; float: right;border-radius: 10px 0 0 0;">
+					
 					  <div style="position: relative; top: 50px; left: 80px; font-family: Arial, Helvetica, sans-serif ;font-size: 170% ; color: aliceblue;" name="cityname">
 						`+weatherData.Country+ `, ` + weatherData.cityName + `
 					  </div>
@@ -146,6 +146,7 @@
 					document.querySelector(".widgets").appendChild(widgetCell);
 				}
 			}
+		
 			</script>
 	  </div>
  
